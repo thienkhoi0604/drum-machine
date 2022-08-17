@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.drum-machine {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid;
+  margin: 120px auto 10px auto;
+  width: 650px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.pad {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  background-color: aqua;
+}
+
+.drum-pad {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* switch button */
+.input-switch {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.label-switch {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 200px;
+  height: 100px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.label-switch:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.input-switch:checked + .label-switch {
+  background: #bada55;
+}
+
+.input-switch:checked + .label-switch:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.label-switch:active:after {
+  width: 130px;
+}
+
+.text-display {
+  padding: 6px 50px;
+  font-size: 1.8rem;
+  border: 1px solid black;
+  background-color: #ccc;
+  line-height: 1.8rem;
+}
